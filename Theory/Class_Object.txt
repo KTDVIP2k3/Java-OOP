@@ -1,0 +1,17 @@
+Concept of OOP (Object Oriented Programing)
+
+It is a conceptual model in which information data is built and organized in a specific, clear and distinct way. And most importantly, that data is gathered to represent real-world entities to reach users.
+
+Class :is the blueprint or template that have attributes and functions (methods) that means to define and present for behavior the collection of objects in reality that programmer want to organize of data.
+
+
+Object : is presented by the keyword (new) that in reality is the real entity which have separate characteristics and method
+
+Constructor : is the special block of code in the class that used for when an object was created by  the keyword (new)
+-It has the same name of the class but no return type, automatically called, and used to when object created
+
+**Notes: When declare parameter in the constructor have to follow some rules;
+-Name of this parameter have to be declared with the meaning of the attribute that represent of an object, class
+-Keyword (this) used for to help distinguish between attributes and parameters.
+
+	
