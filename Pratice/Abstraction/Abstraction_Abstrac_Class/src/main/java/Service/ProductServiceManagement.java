@@ -25,6 +25,7 @@ public class ProductServiceManagement {
         return false;
     }
 
+
     public boolean updateDrinkNameById(String id, String name){
         for(Drink drink : drinkList){
             if(drink.getProductId().equalsIgnoreCase(id)){
@@ -32,6 +33,7 @@ public class ProductServiceManagement {
                 return true;
             }
         }
+        System.out.println("Drink does not exist!!!");
         return false;
     }
 
@@ -42,6 +44,7 @@ public class ProductServiceManagement {
                 return true;
             }
         }
+        System.out.println("Drink does not exist!!!");
         return false;
     }
 

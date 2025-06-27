@@ -6,6 +6,10 @@ public abstract class Product {
     protected String name;
     protected double price;
 
+    public Product(){
+
+    }
+
     public Product(String productId, String name, double price) {
         this.productId = productId;
         this.name = name;
