@@ -1,6 +1,7 @@
 package org.example.Models;
 
 public class Book {
+    private String bookId;
     private String tilte;
     private String author;
     private String description;
@@ -10,13 +11,22 @@ public class Book {
 
     public Book(){}
 
-    public Book(String tilte, String author, String description, int quantity, double price, boolean isAvailabe) {
+    public Book(String bookId, String tilte, String author, String description, int quantity, double price, boolean isAvailabe) {
+        this.bookId = bookId;
         this.tilte = tilte;
         this.author = author;
         this.description = description;
         this.quantity = quantity;
         this.price = price;
         this.isAvailabe = isAvailabe;
+    }
+
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
     }
 
     public String getTilte() {
@@ -68,7 +78,7 @@ public class Book {
     }
 
     public void showInforBook(){
-      System.out.println("Title: " + this.tilte + " - " + "Author: "  + this.author +
+      System.out.println("BookId: " + this.bookId + " - " + this.tilte + " - " + "Author: "  + this.author +
               " - " + "Description: " +  this.description + " - " + "Quantity: " + this.quantity
               + " - " + "Price: " + this.price + " - " + "Avaialbe: " + this.isAvailabe);
     }
