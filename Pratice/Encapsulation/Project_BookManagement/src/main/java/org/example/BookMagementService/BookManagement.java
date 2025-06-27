@@ -31,6 +31,15 @@ public class BookManagement {
 
     }
 
+    public boolean findBookByBookId(String bookId){
+        for(Book book : bookList){
+            if(book.getBookId().equalsIgnoreCase(bookId)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void showInfoBookByBookId(String bookId){
         boolean flag = false;
         for(Book book : bookList){
