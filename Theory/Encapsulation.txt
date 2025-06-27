@@ -1,0 +1,18 @@
+Encapsulation is one of the four main principles of object-oriented programming (OOP). It is a technique that binds and hides sensitive data, allowing access and modification only through methods, especially getters and setters.
+
+Note: All data and methods can be hidden or restricted using access modifiers.
+
+-Access modifiers: is essential tools that represent how the member of data and method even class which are organized to be know how can be accessed from other parts of program.
+
+Access modifiers include four types:
+
+Default (no keyword required): Specifies that the data, methods, or classes are accessible only within the same package.
+
+Private (private keyword): Limits access to data, methods, or classes only within the same class where they are declared.
+
+Protected (protected keyword): Allows access to data, methods, or classes within the same package and in subclasses located in other packages.
+
+Public (public keyword): Grants the widest scope, allowing access to data, methods, or classes from anywhere in the application.
+
+Getters and setters are special public methods that allow other classes to access or modify the private attributes of a class.
+They are commonly used to implement the encapsulation principle in object-oriented programming.
