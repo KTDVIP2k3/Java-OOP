@@ -3,6 +3,7 @@ package Models;
 import Interface.ShowInforInterface;
 
 public class Engine implements ShowInforInterface {
+    private String engineId;
     private String model;
     private int horsepower;
     private double capacity; // dung tích (lít)
@@ -14,12 +15,25 @@ public class Engine implements ShowInforInterface {
     }
 
     // Constructor đầy đủ tham số
-    public Engine(String model, int horsepower, double capacity, String fuelType) {
+    public Engine(String engineId, String model, int horsepower, double capacity, String fuelType) {
+        this.engineId = engineId;
         this.model = model;
         this.horsepower = horsepower;
         this.capacity = capacity;
         this.fuelType = fuelType;
         this.isRunning = false;
+    }
+
+    public String getEngineId() {
+        return engineId;
+    }
+
+    public void setEngineId(String engineId) {
+        this.engineId = engineId;
+    }
+
+    public void setRunning(boolean running) {
+        isRunning = running;
     }
 
     // Getters & Setters
@@ -61,6 +75,7 @@ public class Engine implements ShowInforInterface {
 
     @Override
     public void showInfo() {
+        System.out.println("Engine Id: " + engineId);
         System.out.println("Engine Model: " + model);
         System.out.println("Horsepower: " + horsepower + " HP");
         System.out.println("Capacity: " + capacity + " L");
