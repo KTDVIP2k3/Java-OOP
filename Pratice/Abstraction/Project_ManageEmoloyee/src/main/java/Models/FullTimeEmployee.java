@@ -29,6 +29,12 @@ public class FullTimeEmployee extends Employee{
     }
 
     @Override
+    public String toString(){
+        return "EmployeeId: " + this.getEmployeeId() + " - " + "Name: " + this.getName() + " - " + "Address: " + this.getAddress()
+                + " - " + "Phone: " + this.getPhone() + " - " + "Salary " + calculateSalary();
+    }
+
+    @Override
     public double calculateSalary() {
         return this.monthSalary;
     }
