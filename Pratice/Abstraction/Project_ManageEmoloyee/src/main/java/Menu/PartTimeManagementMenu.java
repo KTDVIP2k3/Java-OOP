@@ -72,6 +72,8 @@ public class PartTimeManagementMenu {
         partTimeEmployee.setAddress(sc.nextLine());
         System.out.print("Please enter part-time employee phone: ");
         partTimeEmployee.setPhone(sc.nextLine());
+        System.out.print("Please enter part-time hour works: ");
+        partTimeEmployee.setHourWorks(Integer.parseInt(sc.nextLine()));
         System.out.print("Please enter part-time employee hour rate: ");
         partTimeEmployee.setHourlyRate(Double.parseDouble(sc.nextLine()));
         if(partTimeEmployeeServiceManagement.addPartTimeEmployee(partTimeEmployee)){
@@ -84,7 +86,7 @@ public class PartTimeManagementMenu {
     private void updatePartTimeEmployeeById(Scanner sc){
         String partTimeId;
         double salary;
-        System.out.print("Please enter part-time employee id");
+        System.out.print("Please enter part-time employee id: ");
         partTimeId = sc.nextLine();
         if(partTimeEmployeeServiceManagement.findPartTimeEmployeeById(partTimeId) == null){
             System.out.println("Part-Time employee id does not exist");
@@ -100,12 +102,14 @@ public class PartTimeManagementMenu {
     }
 
     private void deletePartTimeById(Scanner sc){
-        System.out.print("Please enter part-time employee id");
-        if(partTimeEmployeeServiceManagement.findPartTimeEmployeeById(sc.nextLine()) == null){
+        String partTimeId;
+        System.out.print("Please enter part-time employee id: ");
+        partTimeId = sc.nextLine();
+        if(partTimeEmployeeServiceManagement.findPartTimeEmployeeById(partTimeId) == null){
             System.out.println("Part-Time employee id does not exist");
             return;
         }
-        if(partTimeEmployeeServiceManagement.deletePartEmployeeById(sc.nextLine())){
+        if(partTimeEmployeeServiceManagement.deletePartEmployeeById(partTimeId)){
             System.out.println("Delete part-time successfully");
             return;
         }

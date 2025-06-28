@@ -29,6 +29,7 @@ public class FullTimeEmployeeServiceManagementImpl implements FullTimeEmployeeSe
     public void showFullTimeEmployeeById(String employeeId) {
         if(findFullTimeEmployeeById(employeeId) == null){
             System.out.println("Full time employee with this id does not exist");
+            return;
         }
         findFullTimeEmployeeById(employeeId).displayInfo();
     }

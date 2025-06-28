@@ -27,6 +27,7 @@ public class PartTimeEmployeeServiceManagementImpl implements PartTimeEmployeeSe
     public void showPartTimeEmployeeById(String employeeId) {
         if(findPartTimeEmployeeById(employeeId) == null){
             System.out.println("Part time employee Id does not exist");
+            return;
         }
         findPartTimeEmployeeById(employeeId).displayInfo();
     }

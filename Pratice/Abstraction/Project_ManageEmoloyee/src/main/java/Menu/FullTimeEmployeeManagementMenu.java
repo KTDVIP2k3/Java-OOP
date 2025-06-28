@@ -9,7 +9,7 @@ public class FullTimeEmployeeManagementMenu {
     private final FullTimeEmployeeServiceManagementImpl fullTimeEmployeeServiceManagement;
 
 
-    public FullTimeEmployeeManagementMenu(Scanner sc){
+    public FullTimeEmployeeManagementMenu(){
         fullTimeEmployeeServiceManagement = new FullTimeEmployeeServiceManagementImpl();
     }
 
@@ -84,7 +84,7 @@ public class FullTimeEmployeeManagementMenu {
     private void updateFullTimeEmployeeById(Scanner sc){
         String fullTimeId;
         double salary;
-        System.out.print("Please enter full-time employee id");
+        System.out.print("Please enter full-time employee id: ");
         fullTimeId = sc.nextLine();
         if(fullTimeEmployeeServiceManagement.findFullTimeEmployeeById(fullTimeId) == null){
             System.out.println("Full-Time employee id does not exist");
@@ -100,12 +100,14 @@ public class FullTimeEmployeeManagementMenu {
     }
 
     private void deleteFullTimeById(Scanner sc){
-        System.out.print("Please enter full-time employee id");
-        if(fullTimeEmployeeServiceManagement.findFullTimeEmployeeById(sc.nextLine()) == null){
+        String fullTimeId;
+        System.out.print("Please enter full-time employee id: ");
+        fullTimeId = sc.nextLine();
+        if(fullTimeEmployeeServiceManagement.findFullTimeEmployeeById(fullTimeId) == null){
             System.out.println("Full-Time employee id does not exist");
             return;
         }
-        if(fullTimeEmployeeServiceManagement.deleteFullTimeEmployeeById(sc.nextLine())){
+        if(fullTimeEmployeeServiceManagement.deleteFullTimeEmployeeById(fullTimeId)){
             System.out.println("Delete full-time successfully");
             return;
         }
