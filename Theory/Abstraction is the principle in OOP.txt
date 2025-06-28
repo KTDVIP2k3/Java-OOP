@@ -1,0 +1,29 @@
+Abstraction is the principle in OOP that the process of hiding detail data and just implementation essential data for user
+
+Example: Animal is a class that have method make sound(). This method is created just let user know that aninmal have the method make sound() but the details of this function is not initialized. Dog is the class that have the detail method 
+
+Abstraction is represented by 2 keyword
+
+-abstract
+An abstract class is a class that cannot be instantiated directly and may contain abstract methods (without implementation) as well as concrete methods (with implementation).
+It is used to share common behavior among related classes while enforcing specific methods to be implemented by subclasses.
+
+Key points:
+
+Can contain fields, constructors, and methods.
+
+Used when classes share some common logic.
+
+Subclasses use extends to inherit it.
+
+-interface
+An interface is a completely abstract type that defines a contract of behaviors that a class must implement.
+It contains method declarations only (and constants), and does not provide implementation (except default/static in Java 8+).
+
+Key points:
+
+Cannot contain constructors or instance fields.
+
+A class can implement multiple interfaces.
+
+Used to define capabilities or behaviors (e.g., Flyable, Serializable).

@@ -1,0 +1,40 @@
+🧠 Java Inheritance – Summary
+1. Definition:
+
+Inheritance is a core concept in OOP that allows a child class (subclass) to inherit fields and methods from a parent class (superclass).
+
+It helps in reusing code and building new classes based on existing ones.
+
+2. Usage:
+
+Use the extends keyword to inherit from another class.
+
+java
+Copy
+Edit
+class Animal {
+    void eat() { System.out.println("Eating..."); }
+}
+
+class Dog extends Animal {
+    void bark() { System.out.println("Barking..."); }
+}
+3. Benefits:
+
+✅ Code Reusability – reuse existing logic.
+
+✅ Method Overriding – enables runtime polymorphism.
+
+✅ Abstraction – hide unnecessary details, focus on functionality.
+
+✅ Organized structure – improves readability and maintainability.
+
+4. Key Terminologies:
+
+Term	Description
+Class	A blueprint/template to create objects.
+Superclass / Parent	The class whose members are inherited.
+Subclass / Child	The class that inherits from a superclass.
+extends	Keyword used to inherit from a superclass.
+Method Overriding	Redefining a superclass method in the subclass.
+Reusability	Enables using code from an existing class.
