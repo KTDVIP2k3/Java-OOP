@@ -1,10 +1,10 @@
 package Models;
 
 public abstract class Employee {
-    private String employeeId;
-    private String name;
-    private String address;
-    private String phone;
+    protected String employeeId;
+    protected String name;
+    protected String address;
+    protected String phone;
 
     public Employee(){}
 
