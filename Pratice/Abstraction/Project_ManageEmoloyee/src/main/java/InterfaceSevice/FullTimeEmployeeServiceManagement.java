@@ -7,11 +7,11 @@ public interface FullTimeEmployeeServiceManagement {
 
     public void showFullTimeEmployeeById(String employeeId);
 
-    public boolean findFullTimeEmployeeById(String employeeId);
+    public FullTimeEmployee findFullTimeEmployeeById(String employeeId);
 
     public boolean addFullTimeEmployee(FullTimeEmployee fullTimeEmployee);
 
-    public boolean updateSalaryFullTimeEmployeeById(String employeeId);
+    public boolean updateSalaryFullTimeEmployeeById(String employeeId, double salary);
 
     public boolean deleteFullTimeEmployeeById(String employeeId);
 }
