@@ -1,0 +1,19 @@
+In inheritance principle divide into 2 relationship
+-Is-A relationship: is meant that the subclass can inherit superclass with the keyword (extends). This relate to father-son relationship.
+Ex: Animal that class have some general feature and was created like the blueprint from another subclass with have like dog class is the subclass inherit animal superclass also inherit general features and they can provide more distinguish features by own self.
+-Has-A relationship:The "has-a" relationship is an object-oriented concept that models how one class contains or references another class.
+
+**Notes:
+1. Composition (Strong ownership):
+Class A creates and owns Class B.
+
+If A is destroyed, B is also destroyed.
+
+Example: Human has-a Heart
+
+2. Aggregation (Weak ownership):
+Class A uses Class B but doesn't control its lifecycle.
+
+If A is destroyed, B can still exist.
+
+Example: Student has-a Address
