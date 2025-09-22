@@ -72,6 +72,62 @@ public class AuthorServiceImplement implements AuthorInterfaceService {
     }
 
     @Override
+    public boolean updateAuthorNameByAuthorID(String authorId, String authorName) throws Exception {
+        for(Author author : authorList){
+            if(author.getAuthorId().equalsIgnoreCase(authorId)){
+                if(authorName.isBlank()){
+                    throw new IllegalArgumentException("Author name should not be blank!!!");
+                }
+                author.setAuthorName(authorName);
+                return true;
+            }
+        }
+        throw new IllegalArgumentException("Author Id does not exist!!!");
+    }
+
+    @Override
+    public boolean updateAuthorNationalityByAuthorId(String authorID, String nationality) throws Exception {
+        for(Author author : authorList){
+            if(author.getAuthorId().equalsIgnoreCase(authorID)){
+                if(nationality.isBlank()){
+                    throw new IllegalArgumentException("Author nationality should not be blank!!!");
+                }
+                author.setNationality(nationality);
+                return true;
+            }
+        }
+        throw new IllegalArgumentException("Author Id does not exist!!!");
+    }
+
+    @Override
+    public boolean updateAuthorBirthDayByAuthorId(String authorId, String birthday) throws Exception {
+        for(Author author : authorList){
+            if(author.getAuthorId().equalsIgnoreCase(authorId)){
+                if(birthday.isBlank()){
+                    throw new IllegalArgumentException("Author birthday should not be blank!!!");
+                }
+                author.setBirthday(birthday);
+                return true;
+            }
+        }
+        throw new IllegalArgumentException("Author Id does not exist!!!");
+    }
+
+    @Override
+    public boolean updateAuthorBiographyByAuthorId(String authorId, String biography) throws Exception {
+        for(Author author : authorList){
+            if(author.getAuthorId().equalsIgnoreCase(authorId)){
+                if(biography.isBlank()){
+                    throw new IllegalArgumentException("Author biography should not be blank!!!");
+                }
+                author.setBiography(biography);
+                return true;
+            }
+        }
+        throw new IllegalArgumentException("Author Id does not exist!!!");
+    }
+
+    @Override
     public boolean deleteAuthorById(String authorID) {
         for(Author author : authorList){
             if(author.getAuthorId().equalsIgnoreCase(authorID)){

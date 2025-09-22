@@ -84,7 +84,7 @@ public class Author {
                 return book;
             }
         }
-        throw new IllegalArgumentException("BookId does not exist")
+        throw new IllegalArgumentException("BookId does not exist");
     }
 
     public boolean updateBookAllFieldByBookId(Book book) throws Exception{
