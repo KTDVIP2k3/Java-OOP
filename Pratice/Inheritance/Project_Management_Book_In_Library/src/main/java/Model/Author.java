@@ -5,11 +5,11 @@ import java.util.EmptyStackException;
 import java.util.List;
 
 public class Author {
-    private String authorId;
-    private String authorName;
-    private String birthday;
-    private String nationality;
-    private String biography;
+        private String authorId;
+        private String authorName;
+        private String birthday;
+        private String nationality;
+        private String biography;
     private List<Book> bookList;
 
     public Author(){
@@ -24,6 +24,14 @@ public class Author {
         this.authorName = authorName;
         this.authorId = authorId;
         bookList = new ArrayList<>();
+    }
+
+    public Author(String id, String name, String birthday, String nationality, String biography) {
+        this.authorId = id;
+        this.authorName = name;
+        this.birthday = birthday;
+        this.nationality = nationality;
+        this.biography = biography;
     }
 
     public String getAuthorId() {
