@@ -9,14 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookServiceImplement implements BookInterfaceService {
-    private final AuthorInterfaceService authorInterfaceService;
-    private final List<Author> authorList;
+    private  AuthorInterfaceService authorInterfaceService;
+    private  List<Author> authorList;
     private final List<Book> bookList = new ArrayList<>();
 
 
-    public BookServiceImplement(AuthorInterfaceService authorInterfaceService) throws Exception{
-        this.authorInterfaceService = authorInterfaceService;
-        authorList = authorInterfaceService.getAllAuthors();
+    public BookServiceImplement(AuthorInterfaceService authorInterfaceService) {
+        try{
+            this.authorInterfaceService = authorInterfaceService;
+            authorList = authorInterfaceService.getAllAuthors();
+        }catch (Exception e){
+            throw new IllegalArgumentException();
+        }
     }
 
 
