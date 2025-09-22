@@ -66,6 +66,10 @@ public class Author {
         this.biography = biography;
     }
 
+    public List<Book> getBookListByAuthor() throws  Exception{
+        return  bookList;
+    }
+
     public boolean addBoo(Book book) throws Exception{
         bookList.add(book);
         return true;
@@ -144,7 +148,4 @@ public class Author {
     }
 
 
-    public List<Book> getBookListByAuthor() throws  Exception{
-        return  bookList;
-    }
 }
