@@ -6,16 +6,18 @@ public class Book {
     private String description;
     private String publishedYear;
     private double price;
+    private Author author;
     public Book(){
 
     }
 
-    public Book(String bookId, String title, String description, String publishedYear, double price){
+    public Book(String bookId, String title, String description, String publishedYear, double price, Author author){
         this.bookId = bookId;
         this.title = title;
         this.description = description;
         this.publishedYear = publishedYear;
         this.price = price;
+        this.author = author;
     }
 
     public String getBookId() {
@@ -58,5 +60,12 @@ public class Book {
         this.price = price;
     }
 
+    @Override
+    public String toString(){
+        return "BookId: " + bookId + " - " + "Title: " + title +
+                " - " + "Description: " + description + " - " +
+                "Published year: " + publishedYear + " - " +
+                "Price: " + price + " - " + "Author name :" + author.getAuthorName();
+    }
 
 }

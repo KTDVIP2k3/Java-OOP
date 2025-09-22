@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 import java.util.List;
 
 public class Author {
@@ -23,5 +24,127 @@ public class Author {
         this.authorName = authorName;
         this.authorId = authorId;
         bookList = new ArrayList<>();
+    }
+
+    public String getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(String authorId) {
+        this.authorId = authorId;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public String getBiography() {
+        return biography;
+    }
+
+    public void setBiography(String biography){
+        this.biography = biography;
+    }
+
+    public boolean addBoo(Book book) throws Exception{
+        bookList.add(book);
+        return true;
+    }
+
+    public Book findBookByIdByAuthor(String bookID) throws  Exception{
+        for(Book book : bookList){
+            if(book.getBookId().equalsIgnoreCase(bookID)){
+                return book;
+            }
+        }
+        return null;
+    }
+
+    public boolean updateBookAllFieldByBookId(Book book) throws Exception{
+        for(Book book1 : bookList){
+            if(book1.getBookId().equalsIgnoreCase(book.getBookId())){
+                book1.setTitle(book.getTitle());
+                book1.setDescription(book.getDescription());
+                book1.setPrice(book.getPrice());
+                book1.setPublishedYear(book.getPublishedYear());
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean updateBookTitleByBookId(String bookId, String bookTitle) throws Exception{
+        for(Book book : bookList){
+            if(book.getBookId().equalsIgnoreCase(bookId)){
+                book.setTitle(bookTitle);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean updateBookDescriptionByBookId(String bookId, String description) throws  Exception{
+        for(Book book : bookList){
+            if(book.getBookId().equalsIgnoreCase(bookId)){
+                book.setDescription(description);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean updateBookPriceByBookId(String bookId, double price) throws Exception{
+        for(Book book : bookList){
+            if(book.getBookId().equalsIgnoreCase(bookId)){
+                book.setPrice(price);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean updateBookPublishedYearByBookId(String bookId, String publishedYear) throws Exception{
+        for(Book book : bookList){
+            if(book.getBookId().equalsIgnoreCase(bookId)){
+                book.setPublishedYear(publishedYear);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean deleteBookByBookId(String bookID) throws Exception{
+        for(Book book : bookList){
+            if(book.getBookId().equalsIgnoreCase(bookID)){
+                bookList.remove(book);
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    public List<Book> getBookListByAuthor() throws  Exception{
+        return  bookList;
     }
 }
