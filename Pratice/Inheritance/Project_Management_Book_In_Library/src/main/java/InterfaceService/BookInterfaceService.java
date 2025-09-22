@@ -5,7 +5,7 @@ import Model.Book;
 import java.util.List;
 
 public interface BookInterfaceService {
-    public boolean addBook();
+    public boolean addBookByAuthorId(String authorId, Book book);
 
     public boolean updateBook();
 

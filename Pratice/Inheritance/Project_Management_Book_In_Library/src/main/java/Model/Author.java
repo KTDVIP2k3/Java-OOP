@@ -90,6 +90,21 @@ public class Author {
     public boolean updateBookAllFieldByBookId(Book book) throws Exception{
         for(Book book1 : bookList){
             if(book1.getBookId().equalsIgnoreCase(book.getBookId())){
+                if(book.getTitle().isBlank()){
+                    throw new IllegalArgumentException("Book title should not be blank");
+                }
+                if(book.getDescription().isBlank()){
+                    throw new IllegalArgumentException("Description should not be blank!!!");
+                }
+
+                if(book.getPrice() <= 0){
+                    throw new IllegalArgumentException("Price should not be <= 0");
+                }
+
+                if(book.getPublishedYear().isBlank()){
+                    throw new IllegalArgumentException("Published year should not be blank");
+                }
+
                 book1.setTitle(book.getTitle());
                 book1.setDescription(book.getDescription());
                 book1.setPrice(book.getPrice());
@@ -97,47 +112,64 @@ public class Author {
                 return true;
             }
         }
-        return false;
+        throw new IllegalArgumentException("Book Id does not exist");
     }
 
     public boolean updateBookTitleByBookId(String bookId, String bookTitle) throws Exception{
         for(Book book : bookList){
             if(book.getBookId().equalsIgnoreCase(bookId)){
+                if(bookTitle.isBlank()){
+                    throw new IllegalArgumentException("Book title should not be blank");
+                }
                 book.setTitle(bookTitle);
                 return true;
             }
         }
-        return false;
+        throw new IllegalArgumentException("Book Id does not exist");
     }
 
     public boolean updateBookDescriptionByBookId(String bookId, String description) throws  Exception{
         for(Book book : bookList){
             if(book.getBookId().equalsIgnoreCase(bookId)){
+                if(description.isBlank()){
+                    throw new IllegalArgumentException("Description should not be blank!!!");
+                }
                 book.setDescription(description);
                 return true;
             }
         }
-        return false;
+        throw new IllegalArgumentException("Book Id does not exist");
     }
 
-    public boolean updateBookPriceByBookId(String bookId, double price) throws Exception{
-        for(Book book : bookList){
-            if(book.getBookId().equalsIgnoreCase(bookId)){
-                book.setPrice(price);
-                return true;
+    public boolean updateBookPriceByBookId(String bookId, String price) throws Exception{
+        try{
+            double price1 = Double.parseDouble(price);
+            for(Book book : bookList){
+                if(book.getBookId().equalsIgnoreCase(bookId)){
+                    if(price1 <= 0){
+                        throw new IllegalArgumentException("Price should not be <= 0");
+                    }
+                    book.setPrice(price1);
+                    return true;
+                }
             }
+            throw new IllegalArgumentException("Book Id does not exist");
+        }catch (NumberFormatException numberFormatException){
+            throw new NumberFormatException("Price should be digit");
         }
-        return false;
     }
 
     public boolean updateBookPublishedYearByBookId(String bookId, String publishedYear) throws Exception{
         for(Book book : bookList){
             if(book.getBookId().equalsIgnoreCase(bookId)){
+                if(publishedYear.isBlank()){
+                    throw new IllegalArgumentException("Published year should not be blank");
+                }
                 book.setPublishedYear(publishedYear);
                 return true;
             }
         }
-        return false;
+        throw new IllegalArgumentException("Book Id does not exist");
     }
 
     public boolean deleteBookByBookId(String bookID) throws Exception{
@@ -147,7 +179,7 @@ public class Author {
                 return true;
             }
         }
-        return false;
+        throw new IllegalArgumentException("Book Id does not exist");
     }
 
 
