@@ -73,7 +73,26 @@ public class Author {
         return  bookList;
     }
 
-    public boolean addBoo(Book book) throws Exception{
+    public boolean addBooK(Book book) throws Exception{
+        for(Book book1 : bookList){
+            if(book1.getBookId().equalsIgnoreCase(book.getBookId())){
+                throw new IllegalArgumentException("Book Id does not exist");
+            }
+        }
+        if(book.getTitle().isBlank()){
+            throw new IllegalArgumentException("Book title should not be blank");
+        }
+        if(book.getDescription().isBlank()){
+            throw new IllegalArgumentException("Description should not be blank!!!");
+        }
+
+        if(book.getPrice() <= 0){
+            throw new IllegalArgumentException("Price should not be <= 0");
+        }
+
+        if(book.getPublishedYear().isBlank()){
+            throw new IllegalArgumentException("Published year should not be blank");
+        }
         bookList.add(book);
         return true;
     }
@@ -84,7 +103,7 @@ public class Author {
                 return book;
             }
         }
-        throw new IllegalArgumentException("BookId does not exist");
+        return null;
     }
 
     public boolean updateBookAllFieldByBookId(Book book) throws Exception{

@@ -5,11 +5,14 @@ import Model.Book;
 import java.util.List;
 
 public interface BookInterfaceService {
-    public boolean addBookByAuthorId(String authorId, Book book);
+    public boolean addBookIntoAuthor(String authorId, Book book) throws Exception;
 
-    public boolean updateBook();
+    public boolean updateAllFieldBookIntoAuthor(String authorId, Book book) throws Exception;
 
-    public boolean deleteBook();
 
-    public List<Book> getAllBook();
+    public boolean deleteBookByAuthor(String authorId, String bookId) throws Exception;
+
+    public Book findBookById(String bookId) throws Exception;
+
+    public List<Book> getAllBook() throws Exception;
 }
