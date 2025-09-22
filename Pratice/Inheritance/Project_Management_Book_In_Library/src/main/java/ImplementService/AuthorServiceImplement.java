@@ -35,9 +35,7 @@ public class AuthorServiceImplement implements AuthorInterfaceService {
     public boolean addAuthor(Author author) throws Exception{
         for(Author author1 : authorList){
             if(author1.getAuthorId().equalsIgnoreCase(author.getAuthorId())){
-                System.out.println("AuthorId existed");
-                System.out.println("Please input another authorID");
-                return false;
+                throw new IllegalArgumentException("AuthorId existed!!!!");
             }
         }
         authorList.add(author);
@@ -75,6 +73,12 @@ public class AuthorServiceImplement implements AuthorInterfaceService {
 
     @Override
     public boolean deleteAuthorById(String authorID) {
-        return false;
+        for(Author author : authorList){
+            if(author.getAuthorId().equalsIgnoreCase(authorID)){
+                authorList.remove(author);
+                return true;
+            }
+        }
+        throw new IllegalArgumentException("AuthorId dose not exist!!!!");
     }
 }
