@@ -24,6 +24,7 @@ public class BookServiceImplement implements BookInterfaceService {
         for(Author author : authorList){
             if(author.getAuthorId().equalsIgnoreCase(authorId)){
                 author.addBooK(book);
+                book.setAuthor(author);
                 bookList.add(book);
                 return true; // Thoát ngay sau khi thêm sách thành công
             }

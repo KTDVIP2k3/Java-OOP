@@ -28,6 +28,14 @@ public class Book {
         this.price = price;
     }
 
+    public void setAuthor(Author author){
+        this.author = author;
+    }
+
+    public Author getAuthor(){
+        return author;
+    }
+
     public String getBookId() {
         return bookId;
     }

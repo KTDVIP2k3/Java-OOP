@@ -32,6 +32,7 @@ public class Author {
         this.birthday = birthday;
         this.nationality = nationality;
         this.biography = biography;
+        bookList = new ArrayList<>();
     }
 
     public String getAuthorId() {
@@ -207,6 +208,12 @@ public class Author {
             }
         }
         throw new IllegalArgumentException("Book Id does not exist");
+    }
+
+    @Override
+    public String toString(){
+        return "AuthorId: " + this.authorId + " - " + "Author Name: " + this.authorName + " - " + "Birthday: " + this.birthday
+                + " - " + "Nationality" + this.nationality + " - " + "Biography: " + this.biography;
     }
 
 
