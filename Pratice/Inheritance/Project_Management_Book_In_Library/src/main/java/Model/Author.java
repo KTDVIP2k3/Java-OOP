@@ -67,6 +67,9 @@ public class Author {
     }
 
     public List<Book> getBookListByAuthor() throws  Exception{
+        if(bookList.isEmpty()){
+            throw new IllegalArgumentException("BookList is empty");
+        }
         return  bookList;
     }
 
@@ -81,7 +84,7 @@ public class Author {
                 return book;
             }
         }
-        return null;
+        throw new IllegalArgumentException("BookId does not exist")
     }
 
     public boolean updateBookAllFieldByBookId(Book book) throws Exception{

@@ -48,10 +48,29 @@ public class AuthorServiceImplement implements AuthorInterfaceService {
     public boolean updateAuthorAllField(Author author) throws Exception{
         for(Author author1 : authorList){
             if(author1.getAuthorId().equalsIgnoreCase(author.getAuthorId())){
-
+                if(author.getAuthorId().isBlank()){
+                    throw new IllegalArgumentException("Author should not be blank");
+                }
+                if(author.getAuthorName().isBlank()){
+                    throw new IllegalArgumentException("Author name should not be blank");
+                }
+                if(author.getBiography().isBlank()){
+                    throw new IllegalArgumentException("Author biography should not be blank");
+                }
+                if(author.getBirthday().isBlank()){
+                    throw new IllegalArgumentException("Author birthday should not be blank");
+                }
+                if(author.getNationality().isBlank()){
+                    throw new IllegalArgumentException("Author nationality should not be blank");
+                }
+                author1.setAuthorName(author.getAuthorName());
+                author1.setBiography(author.getBiography());
+                author1.setBirthday(author.getBirthday());
+                author1.setNationality(author.getNationality());
+                return true;
             }
         }
-        return false;
+        throw new IllegalArgumentException("AuthorId does not exist");
     }
 
     @Override
