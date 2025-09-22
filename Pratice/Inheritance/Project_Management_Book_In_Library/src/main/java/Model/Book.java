@@ -20,6 +20,14 @@ public class Book {
         this.author = author;
     }
 
+    public Book(String bookId, String title, String description, String publishedYear, double price){
+        this.bookId = bookId;
+        this.title = title;
+        this.description = description;
+        this.publishedYear = publishedYear;
+        this.price = price;
+    }
+
     public String getBookId() {
         return bookId;
     }
