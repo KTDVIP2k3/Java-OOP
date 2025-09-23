@@ -100,4 +100,26 @@ public class BankAccount {
         }
         return true;
     }
+
+    public String showAccountDetail(){
+        String status = "Khong Hoat Dong";
+        if(this.status) {
+            status = "Hoat Dong";
+        }
+        return "Account Details:\n" +
+                "--------------------\n" +
+                "Account Number: " + accountNumber + "\n" +
+                "Account Holder: " + accountHolderName + "\n" +
+                "Account Type: " + accountType + "\n" +
+                "Balance: " + balance + "\n"
+                +"Account Password: " + this.password
+                +"\nAccount address: " + this.address
+                +"\nStatus: " + this.status;
+    }
+
+
+
+    public String showOverall(){
+        return "Bank Account Number: " + this.accountNumber + " - " + "Bank Account Holder Name: " + this.accountHolderName;
+    }
 }
