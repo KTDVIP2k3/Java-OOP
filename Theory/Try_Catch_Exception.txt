@@ -1,0 +1,19 @@
+Try-catch is a programming construct used to handle unexpected errors, known as exceptions, during the execution of a program.
+
+The try block contains the code that might cause an error.
+
+The catch block is where the program jumps to if an exception occurs within the try block. This allows the program to handle the error gracefully, preventing it from crashing, and then continue running.
+
+Types of Exceptions
+There are two main types of exceptions in Java:
+
+Checked Exceptions: These are exceptions that the compiler forces you to handle. They typically represent predictable issues that are outside the program's direct control, such as a file not being found or a network connection being lost. You must either wrap the code in a try-catch block or declare the exception with throws.
+
+Unchecked Exceptions: These are exceptions that the compiler does not force you to handle. They usually signal a logical flaw or a bug in the code, such as dividing by zero or trying to access a null object. The best practice is to fix the bug rather than just catching the exception.
+
+Throw and Throws
+throw: This keyword is used to explicitly "throw" an exception from within a method. You use it when a specific error condition is met, like when a function receives an invalid argument.
+
+throws: This keyword is placed in a method's signature to declare that the method is capable of throwing one or more types of exceptions. This acts as a warning to anyone who calls the method, letting them know they need to be prepared to handle those exceptions.
+
+The relationship works like this: a method that throws an exception will throw it when an error occurs. The calling method must then use a try-catch block to handle it, or it will risk the program crashing.
