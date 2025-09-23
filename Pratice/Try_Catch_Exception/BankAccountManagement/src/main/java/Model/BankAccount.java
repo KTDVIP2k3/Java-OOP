@@ -79,6 +79,7 @@ public class BankAccount {
         this.status = status;
     }
 
+    //Two this function use check and uncheck exception, use throw and throws to another class execute..
     public boolean deposit (double amount) throws Exception{
         if(amount <= 0){
             throw new IllegalArgumentException("So tien phai nap phai lon hon 0 (>0)");
