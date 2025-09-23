@@ -84,6 +84,7 @@ public class BankAccount {
         if(amount <= 0){
             throw new IllegalArgumentException("So tien phai nap phai lon hon 0 (>0)");
         }
+        this.balance += amount;
         return true;
     }
 
@@ -98,6 +99,7 @@ public class BankAccount {
             throw new IllegalArgumentException("Giao dich nay khong the thuc hien" + "\n\"Số dư phải còn lại ít nhất 50 sau khi rút tiền." +
                     "\nSo tien muon rut: " + amount + "\nSo tien trong tai khoan: " + this.balance);
         }
+        this.balance -= amount;
         return true;
     }
 

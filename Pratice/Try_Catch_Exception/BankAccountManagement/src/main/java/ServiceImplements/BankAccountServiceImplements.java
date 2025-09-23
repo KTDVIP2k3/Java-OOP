@@ -3,16 +3,18 @@ package ServiceImplements;
 import Model.BankAccount;
 import ServiceInterfaces.BankAccountServiceInterfaces;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class BankAccountServiceImplements implements BankAccountServiceInterfaces {
-    private final List<BankAccount> bankAccountList;
-    private final Pattern p = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
+    private static final List<BankAccount> bankAccountList = new ArrayList<>();
+    //This static final variable show for that all object of this BankAccountServiceImplements class will share 1 bankAccountList
+    //This variable use keyword to notify that it just created 1 times.
+    private final Pattern p = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&.])[A-Za-z\\d@$!%*?&.]{8,}$");
 
-    public BankAccountServiceImplements(List<BankAccount> bankAccountList){
-        this.bankAccountList = bankAccountList;
+    public BankAccountServiceImplements(){
     }
 
     @Override
@@ -87,7 +89,9 @@ public class BankAccountServiceImplements implements BankAccountServiceInterface
         if(address.isBlank()){
             throw new IllegalArgumentException("Address should not be bank\n" + "Please input address again!!!");
         }
-        return false;
+        BankAccount bankAccount = new BankAccount(bankAccountNumber, bankAccountHolderName, bankAccountType, 0, password, address, true);
+        bankAccountList.add(bankAccount);
+        return true;
     }
 
     @Override
@@ -123,5 +127,14 @@ public class BankAccountServiceImplements implements BankAccountServiceInterface
             }
         }
         throw new IllegalArgumentException("Bank account number does not exist");
+    }
+
+    private static void findBankAccountExistByAccountNumber(BankAccount bankAccount){
+        for(BankAccount bankAccount1 : bankAccountList){
+            if(bankAccount.getAccountNumber().equalsIgnoreCase(bankAccount1.getAccountNumber())){
+                System.out.println("This account number exist!!");
+                return;
+            }
+        }
     }
 }
