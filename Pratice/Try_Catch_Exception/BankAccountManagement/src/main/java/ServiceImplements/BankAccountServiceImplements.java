@@ -105,14 +105,15 @@ public class BankAccountServiceImplements implements BankAccountServiceInterface
                             + "At least one number (0-9).\n" + "At least one special character (e.g., !@#$%).\n"
                             +"Please input password again");
                 }
-
                 if(password == null){
                     throw new IllegalArgumentException("Password should not be null\n" + "Please input password again!!!");
                 }
                 if(password.isBlank()){
                     throw new IllegalArgumentException("Password should not be bank\n" + "Please input password again!!!");
                 }
+
                 bankAccount.setPassword(password);
+                return true;
             }
         }
         throw new IllegalArgumentException("Bank account number does not exist");
