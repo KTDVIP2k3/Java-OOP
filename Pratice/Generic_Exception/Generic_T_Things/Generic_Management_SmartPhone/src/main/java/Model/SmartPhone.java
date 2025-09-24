@@ -1,6 +1,8 @@
 package Model;
 
-public class SmartPhone {
+import ServiceInterfaces.Identifiable;
+
+public class SmartPhone implements Identifiable {
     private String id;
     private String name;
     private String brand;
@@ -28,6 +30,7 @@ public class SmartPhone {
         this.operatingSystem = operatingSystem;
     }
 
+    @Override
     public String getId() {
         return id;
     }
@@ -107,6 +110,7 @@ public class SmartPhone {
     public void setOperatingSystem(String operatingSystem) {
         this.operatingSystem = operatingSystem;
     }
+
 
     public String showInformation() {
         return "SmartPhone{" +
