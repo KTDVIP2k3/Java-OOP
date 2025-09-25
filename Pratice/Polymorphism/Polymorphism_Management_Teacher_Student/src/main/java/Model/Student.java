@@ -1,6 +1,8 @@
 package Model;
 
-public class Student extends Person{
+import ServiceInterfaces.IDServiceInterface;
+
+public class Student  extends Person implements IDServiceInterface {
     private String studentId;
     private String major;
     private int currentYear;
@@ -62,6 +64,8 @@ public class Student extends Person{
         this.faculty = faculty;
     }
 
+
+
     @Override
     public String showInfor() {
         String personInfo = String.format(
@@ -78,5 +82,10 @@ public class Student extends Person{
                 "Current Year: " + this.currentYear + "\n" +
                 "GPA: " + String.format("%.2f", this.gpa) + "\n" +
                 "----------------------";
+    }
+
+    @Override
+    public String getId() {
+        return getStudentId();
     }
 }

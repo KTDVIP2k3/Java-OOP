@@ -1,8 +1,10 @@
 package Model;
 
+import ServiceInterfaces.IDServiceInterface;
+
 import java.time.LocalDate;
 
-public class Teacher extends Person{
+public class Teacher extends Person implements IDServiceInterface {
     private String teacherID;
     private String department;
     private String qualification;
@@ -82,5 +84,10 @@ public class Teacher extends Person{
                 "\nEmployment Date: " + this.employmentDate.toString() + // Dùng .toString() cho LocalDate
                 "\nSalary Scale:  " + String.format("%.2f", this.salaryScale) +
                 "\n=========================================";
+    }
+
+    @Override
+    public String getId() {
+        return getTeacherID();
     }
 }
