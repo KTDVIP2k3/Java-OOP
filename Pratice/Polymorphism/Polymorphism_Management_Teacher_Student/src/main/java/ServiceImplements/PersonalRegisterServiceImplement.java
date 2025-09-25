@@ -10,6 +10,11 @@ public class PersonalRegisterServiceImplement implements PersonalRegisterService
     private final List<Person> personList = new ArrayList<>();
 
     @Override
+    public List<Person> getAllPerson() {
+        return personList;
+    }
+
+    @Override
     public boolean findPersonByIdentifiableNumber(String identifiableNumberID) throws Exception{
         for(Person person : personList){
             if(person.getIdentifiableIdNumber().equalsIgnoreCase(identifiableNumberID)){
