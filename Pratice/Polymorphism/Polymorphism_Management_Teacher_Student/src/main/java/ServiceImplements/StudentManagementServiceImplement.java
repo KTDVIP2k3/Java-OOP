@@ -149,6 +149,16 @@ public class StudentManagementServiceImplement implements GenericServiceInterfac
         }else{
             System.out.println("Update student into personal list failed");
         }
+        student.setName(item.getName());
+        student.setAddress(item.getAddress());
+        student.setAge(item.getAge());
+        student.setBirthday(item.getBirthday());
+        student.setGender(item.getGender());
+        student.setNationality(item.getNationality());
+        student.setMajor(item.getMajor());
+        student.setCurrentYear(item.getCurrentYear());
+        student.setGpa(item.getGpa());
+        student.setFaculty(item.getFaculty());
        for(int i = 0; i <= students.size(); i++){
            if(students.get(i).getStudentId().equalsIgnoreCase(item.getStudentId())){
                 students.set(i, student);
