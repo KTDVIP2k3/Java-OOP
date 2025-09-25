@@ -1,0 +1,28 @@
+
+Polymorphism (from Greek: poly meaning many, morph meaning forms) is one of the four main pillars of OOP. It's the ability of a single interface (like a method name) to represent multiple underlying forms or behaviors.
+
+1. The Core Concept
+Concept	Explanation
+Polymorphism	Allows you to treat objects of different subclasses uniformly through a common parent class or interface reference. This makes code flexible, reusable, and easy to extend.
+
+2. Key Mechanisms
+Polymorphism is realized through two main mechanisms in Java:
+
+A. Overloading (Compile-Time Polymorphism)
+Keyword: Not a keyword, but refers to the method signature.
+
+Concept: Allows multiple methods within the same class to have the same name but different parameters (different number, types, or order of arguments).
+
+Decision Time: The compiler decides which method to call based on the arguments provided.
+
+B. Overriding (Runtime Polymorphism)
+Keyword: @Override (an annotation, not strictly required but highly recommended for clarity and compiler check).
+
+Concept: Occurs when a subclass provides a specific implementation for a method that is already defined in its superclass.
+
+Decision Time: The JVM decides which version of the method to execute at runtime, based on the actual type of the object, not the reference type.
+
+3. The Utility Operator
+Keyword	Function
+instanceof	A binary operator used to check the type of an object at runtime. It returns true if the object on the left is an instance of the class/interface on the right, and false otherwise.
+Usage Context	Primarily used to safely cast an object to a more specific type to access unique subclass methods, preventing a ClassCastException.
