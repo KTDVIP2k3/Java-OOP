@@ -22,10 +22,11 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        try{
+
             boolean flag = true;
             int choice = 0;
             do{
+                try{
                 System.out.println("Main Menu Management");
                 System.out.println("1.Teacher Management");
                 System.out.println("2.Student Management");
@@ -60,23 +61,24 @@ public class Main {
                         System.out.println("Please choose 1 to 4....");
                         break;
                 }
+                } catch (NumberFormatException numberFormatException){
+                    System.out.println("Your choice should be digit!!!!");
+                }
+                catch (IllegalArgumentException illegalArgumentException){
+                    System.out.println("Error services: " + illegalArgumentException.getMessage());
+                }
+                catch (Exception e){
+                    System.out.println("System error: " + e.getMessage());
+                }
             }while (flag);
-        } catch (NumberFormatException numberFormatException){
-            System.out.println("Your choice should be digit!!!!");
-        }
-        catch (IllegalArgumentException illegalArgumentException){
-            System.out.println("Error services: " + illegalArgumentException.getMessage());
-        }
-        catch (Exception e){
-            System.out.println("System error: " + e.getMessage());
-        }
+
     }
 
     private static void teacherManagementScreen(){
-        try{
             boolean flag = true;
             int choice = 0;
             do{
+                try{
                 System.out.println("Teacher Management");
                 System.out.println("1.Get all teacher");
                 System.out.println("2.Find teacher by teacher id");
@@ -106,6 +108,7 @@ public class Main {
                         }else{
                             System.out.println("Teacher id does not exist");
                         }
+                        break;
                     }
                     case 3:
                         try{
@@ -199,20 +202,23 @@ public class Main {
                         System.out.println("Please choose 1 to 6....");
                         break;
                 }
+                }catch (NumberFormatException numberFormatException){
+                    System.out.println("Your choice should be digit!!!!");
+                } catch (IllegalArgumentException illegalArgumentException){
+                    throw  new IllegalArgumentException(illegalArgumentException.getMessage());
+                }
+                catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }while (flag);
-        }catch (NumberFormatException numberFormatException){
-            System.out.println("Your choice should be digit!!!!");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
 
     }
 
     private static void studentManagementScreen(){
-        try{
             boolean flag = true;
             int choice = 0;
             do{
+                try{
                 System.out.println("Student Management");
                 System.out.println("1.Get all student");
                 System.out.println("2.Find student by student id");
@@ -242,6 +248,7 @@ public class Main {
                         }else{
                             System.out.println("Teacher id does not exist");
                         }
+                        break;
                     }
                     case 3:
                         try{
@@ -337,11 +344,15 @@ public class Main {
                         System.out.println("Please choose 1 to 6....");
                         break;
                 }
-            }while (flag);
-        }catch (NumberFormatException numberFormatException){
+            }catch (NumberFormatException numberFormatException){
             System.out.println("Your choice should be digit!!!!");
-        } catch (Exception e) {
+        } catch (IllegalArgumentException illegalArgumentException){
+            throw  new IllegalArgumentException(illegalArgumentException.getMessage());
+        }
+        catch (Exception e) {
             throw new RuntimeException(e);
         }
+            }while (flag);
+
     }
 }

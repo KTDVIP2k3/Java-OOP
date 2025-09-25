@@ -68,14 +68,11 @@ public class Student  extends Person implements IDServiceInterface {
 
     @Override
     public String showInfor() {
-        String personInfo = String.format(
-                "IdentifiableIdNumber: %s, Name: %s, Address: %s, Age: %d, Birthday: %s, Gender: %s, Nationality: %s",
-                super.getIdentifiableIdNumber(), super.getName(), super.getAddress(), super.getAddress(), super.getBirthday(), super.getGender(), super.getNationality() // Giả sử các trường này là protected
-        );
 
 
         return "--- STUDENT RECORD ---\n" +
-                personInfo + "\n" +
+                "\n[THÔNG TIN CÁ NHÂN]" +
+                "\n" + super.personInfor() +
                 "Student ID: " + this.studentId + "\n" +
                 "Major: " + this.major + "\n" +
                 "Faculty: " + this.faculty + "\n" +

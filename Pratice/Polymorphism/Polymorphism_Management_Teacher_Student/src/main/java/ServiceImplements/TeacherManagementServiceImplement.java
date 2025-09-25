@@ -33,7 +33,7 @@ public class TeacherManagementServiceImplement implements GenericServiceInterfac
                 return teacher;
             }
         }
-        throw new IllegalArgumentException("Can not find teacher with this id: " + id);
+        return null;
     }
 
     @Override
