@@ -184,4 +184,8 @@ public class TeacherManagementServiceImplement implements GenericServiceInterfac
         }
         return teachers.remove(findById(id));
     }
+
+    public void show(){
+        System.out.println("alo");
+    }
 }
